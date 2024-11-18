@@ -1,101 +1,205 @@
-import Image from "next/image";
+// app/page.js
+
+// Removed 'use client'; to keep this as a Server Component
+
+import Image from 'next/image';
+import Header from '../components/header';
+import Head from 'next/head';
+import ClientVillageSlider from '../components/ClientVillageSlider';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <Head>
+        <title>Landing Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <main className="bg-white font-poppins">
+        <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* Hero Section */}
+        <section
+          className="relative bg-cover bg-center h-screen"
+          style={{ backgroundImage: "url('/assets/village profile.png')" }}
+        >
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="container mx-auto relative z-10 flex flex-col justify-center h-full text-left text-white px-8 md:px-16">
+            <h1 className="text-4xl md:text-6xl font-bold">
+              Selamat datang di
+            </h1>
+            <h2 className="text-6xl md:text-8xl font-bold mt-2 text-shadow-custom">
+              Ruang Desa
+            </h2>
+            <p className="mt-4 text-lg md:text-xl max-w-2xl">
+              Pusat informasi dan sumber daya untuk kemajuan desa kita
+            </p>
+            <button className="mt-6 bg-custom-yellow shadow-custom rounded-[40px] px-8 py-4 text-white font-bold text-xl md:text-2xl leading-tight text-shadow-custom">
+              Jelajahi
+            </button>
+          </div>
+        </section>
+
+        {/* Tentang Section */}
+        <section className="bg-dark-blue text-white py-12">
+          <div className="container mx-auto px-6 md:px-16">
+            <div className="md:flex md:flex-row md:items-center">
+              {/* Slider */}
+              <div className="md:w-1/2">
+                <ClientVillageSlider />
+              </div>
+              {/* Text Content */}
+              <div className="md:w-1/2 md:pl-12 mt-8 md:mt-0">
+                <h3 className="text-4xl md:text-6xl font-bold text-shadow-custom">
+                  Cirendeu
+                </h3>
+                <p className="mt-4 text-lg md:text-xl">
+                  Cireundeu berasal dari nama “pohon reundeu”, karena sebelumnya di kampung ini banyak sekali populasi pohon reundeu. Pohon reundeu itu sendiri ialah pohon untuk bahan obat herbal. Maka dari itu kampung ini disebut Kampung Cireundeu. Kampung Adat Cireundeu terletak di Kelurahan Leuwigajah, Kecamatan Cimahi Selatan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="bg-dark-blue text-white py-12">
+          <div className="container mx-auto px-6 md:px-16">
+            <h2 className="text-4xl md:text-6xl font-bold text-shadow-custom mb-4">
+              Terkait
+            </h2>
+            <h3 className="text-2xl md:text-4xl font-bold mb-8">
+              Tim
+            </h3>
+
+            {/* Team Members */}
+            <div className="flex flex-wrap justify-between">
+              {/* Member 1 */}
+              <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+                <div className="bg-white bg-opacity-10 p-6 rounded-[20px] text-center">
+                  <Image
+                    src="/assets/teamMember1.png"
+                    alt="Team Member Aulia"
+                    width={256}
+                    height={256}
+                    className="rounded-full mx-auto"
+                  />
+                  <h3 className="text-xl font-bold mt-4">Aulia Rahma | AUL</h3>
+                  <p className="font-semibold">UI/UX</p>
+                </div>
+              </div>
+              {/* Member 2 */}
+              <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+                <div className="bg-white bg-opacity-10 p-6 rounded-[20px] text-center">
+                  <Image
+                    src="/assets/teamMember2.png"
+                    alt="Team Member Geraldi"
+                    width={256}
+                    height={256}
+                    className="rounded-full mx-auto"
+                  />
+                  <h3 className="text-xl font-bold mt-4">Geraldi Ridwan | ALD</h3>
+                  <p className="font-semibold">Front End</p>
+                </div>
+              </div>
+              {/* Member 3 */}
+              <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+                <div className="bg-white bg-opacity-10 p-6 rounded-[20px] text-center">
+                  <Image
+                    src="/assets/teamMember3.png"
+                    alt="Team Member Zaidan"
+                    width={256}
+                    height={256}
+                    className="rounded-full mx-auto"
+                  />
+                  <h3 className="text-xl font-bold mt-4">Zaidan | DUN</h3>
+                  <p className="font-semibold">Front End</p>
+                </div>
+              </div>
+              {/* Member 4 */}
+              <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+                <div className="bg-white bg-opacity-10 p-6 rounded-[20px] text-center">
+                  <Image
+                    src="/assets/teamMember4.png"
+                    alt="Team Member Zaenal"
+                    width={256}
+                    height={256}
+                    className="rounded-full mx-auto"
+                  />
+                  <h3 className="text-xl font-bold mt-4">Zaenal Abidin | ZEN</h3>
+                  <p className="font-semibold">Back End</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer Section */}
+        <section
+          className="relative bg-cover bg-center py-12"
+          style={{ backgroundImage: "url('/assets/VillageFooter.png')" }}
+        >
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="container mx-auto relative z-10 flex flex-col items-center justify-center text-center text-white px-6 md:px-16">
+            {/* Logo and Lines */}
+            <div className="flex items-center mb-8">
+              <div className="w-32 border-t border-white"></div>
+              <Image
+                src="/assets/logoputih.png"
+                alt="Logo"
+                width={200}
+                height={64}
+                className="mx-4"
+              />
+              <div className="w-32 border-t border-white"></div>
+            </div>
+            {/* Subscription Form */}
+            <div className="bg-white bg-opacity-20 p-8 rounded-lg max-w-md w-full">
+              <h2 className="text-lg">Dapatkan informasi</h2>
+              <h1 className="text-5xl font-bold">Terkini</h1>
+              <div className="mt-4 flex">
+                <input
+                  type="email"
+                  placeholder="Masukan Email Terkini"
+                  className="p-4 rounded-l-lg w-full text-black"
+                />
+                <button className="bg-custom-yellow text-white p-4 rounded-r-lg">
+                  Kirim
+                </button>
+              </div>
+            </div>
+            {/* Social Media Links */}
+            <div className="mt-8">
+              <h2 className="text-lg">Ikuti kami :</h2>
+              <div className="flex justify-center space-x-4 mt-2">
+                <a href="#" className="text-white text-2xl">
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a href="#" className="text-white text-2xl">
+                  <i className="fas fa-envelope"></i>
+                </a>
+                <a href="#" className="text-white text-2xl">
+                  <i className="fas fa-headphones"></i>
+                </a>
+              </div>
+            </div>
+            {/* Navigation Links */}
+            <div className="mt-8 flex space-x-8">
+              <a href="#" className="text-white text-lg">
+                Tentang
+              </a>
+              <a href="#" className="text-white text-lg">
+                Terkait
+              </a>
+              <a href="#" className="text-white text-lg">
+                Kontak
+              </a>
+            </div>
+            {/* Footer Text */}
+            <div className="mt-8">
+              <p>2024. Hak Cipta Dilindungi | © Ruang Desa</p>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
