@@ -5,7 +5,7 @@
 import Image from 'next/image';
 import Header from '../components/header';
 import Head from 'next/head';
-import ClientVillageSlider from '../components/ClientVillageSlider';
+import ClientVillageSlider from '../components/clientVillageSlider';
 
 export default function Home() {
   return (

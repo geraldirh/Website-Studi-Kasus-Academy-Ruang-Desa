@@ -1,4 +1,4 @@
-// components/Header.js
+// components/header.js
 "use client"; // Marking this component as a Client Component
 
 import { useState } from "react";
@@ -31,10 +31,16 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8 items-center">
-          <Link href="/signinform" className="text-lg text-white hover:text-custom-yellow transition duration-300">
+          <Link
+            href="/signinform"
+            className="text-lg text-white hover:text-custom-yellow transition duration-300"
+          >
             Masuk
           </Link>
-          <Link href="/signup" className="bg-custom-yellow hover:bg-yellow-500 text-lg px-6 py-2 rounded-lg text-white transition duration-300">
+          <Link
+            href="/signup"
+            className="bg-custom-yellow hover:bg-yellow-500 text-lg px-6 py-2 rounded-lg text-white transition duration-300"
+          >
             Daftar
           </Link>
         </nav>
@@ -61,12 +67,18 @@ const Header = () => {
         <nav className="md:hidden bg-black bg-opacity-90 backdrop-blur-sm shadow-lg">
           <ul className="flex flex-col space-y-4 p-4">
             <li>
-              <Link href="/signinform" className="text-lg text-white hover:text-custom-yellow transition duration-300">
+              <Link
+                href="/signinform"
+                className="text-lg text-white hover:text-custom-yellow transition duration-300"
+              >
                 Masuk
               </Link>
             </li>
             <li>
-              <Link href="/signup" className="bg-custom-yellow hover:bg-yellow-500 text-lg px-6 py-2 rounded-lg text-white transition duration-300">
+              <Link
+                href="/signup"
+                className="bg-custom-yellow hover:bg-yellow-500 text-lg px-6 py-2 rounded-lg text-white transition duration-300"
+              >
                 Daftar
               </Link>
             </li>

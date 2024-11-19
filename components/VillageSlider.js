@@ -1,10 +1,10 @@
 // components/VillageSlider.js
 "use client"; // Marking this component as a Client Component
 
-import React from 'react';
-import Slider from 'react-slick';
-import Image from 'next/image';
-import "slick-carousel/slick/slick.css"; 
+import React from "react";
+import Slider from "react-slick";
+import Image from "next/image";
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const VillageSlider = () => {

@@ -1,15 +1,15 @@
-// components/ClientVillageSlider.js
+// components/clientVillageSlider.js
 
-'use client'; // Marks this as a Client Component
+"use client"; // Marks this as a Client Component
 
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 // Dynamically import VillageSlider with SSR disabled
-const VillageSlider = dynamic(() => import('./VillageSlider'), {
+const VillageSlider = dynamic(() => import("./villageSlider"), {
   ssr: false,
   loading: () => <p>Loading slider...</p>, // Optional: Add a loading state
 });
 
-export default function ClientVillageSlider() {
+export default function clientVillageSlider() {
   return <VillageSlider />;
 }
