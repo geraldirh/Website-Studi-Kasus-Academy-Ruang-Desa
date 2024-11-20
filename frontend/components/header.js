@@ -32,7 +32,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8 items-center">
           <Link
-            href="/signinform"
+            href="/signin"
             className="text-lg text-white hover:text-custom-yellow transition duration-300"
           >
             Masuk
@@ -68,7 +68,7 @@ const Header = () => {
           <ul className="flex flex-col space-y-4 p-4">
             <li>
               <Link
-                href="/signinform"
+                href="/signin"
                 className="text-lg text-white hover:text-custom-yellow transition duration-300"
               >
                 Masuk
